@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+
+p "Deleted all posts and Generated new"
+
+
+Post.delete_all
+
+100.times do
+  post = Post.create(
+    title: Faker::Book.title,
+    body: Faker::Lorem.paragraph(sentence_count: 10)
+  )
+  p" #{post.title} - #{post.body[0..30]}..."
+end
