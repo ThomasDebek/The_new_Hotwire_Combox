@@ -89,8 +89,14 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     erubi (1.13.0)
+    faker (3.4.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hotwire_combobox (0.3.1)
+      rails (>= 7.0.7.2)
+      stimulus-rails (>= 1.2)
+      turbo-rails (>= 1.2)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -224,6 +230,8 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faker (~> 3.4)
+  hotwire_combobox (~> 0.3.1)
   importmap-rails
   jbuilder
   pg (~> 1.1)
