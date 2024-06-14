@@ -10,6 +10,9 @@
     <%= link_to "New post", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white block font-medium transition duration-300" %>
   </div>
 
+
+  <%= render "posts/combobox" %>
+
   <div id="posts" class="min-w-full">
     <% @posts.each do |post| %>
       <%= render post %>
