@@ -1,26 +1,26 @@
-<div class="w-full">
+<div class="w-full p-6 bg-gray-50 rounded-lg shadow-lg">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-600 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <% content_for :title, "Posts" %>
 
-  <div class="flex justify-between items-center mb-4">
-    <h1 class="font-bold text-4xl">Posts</h1>
-    <%= link_to "New post", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white block font-medium transition duration-300" %>
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="font-bold text-4xl text-gray-800">Posts</h1>
+    <%= link_to "New post", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 hover:bg-blue-700 text-white font-medium transition duration-300" %>
   </div>
-
 
   <%= render "posts/combobox" %>
 
-  <div id="posts" class="min-w-full">
+  <div id="posts" class="w-full space-y-4">
     <% @posts.each do |post| %>
-      <%= render post %>
-      <p>
-        <%= link_to "Show this post", post, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-200 text-black inline-block font-medium transition duration-300" %>
-        <%= link_to "Edit this post", edit_post_path(post), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 hover:bg-gray-200 text-black inline-block font-medium transition duration-300" %>
-
-      </p>
+      <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <%= render post %>
+        <div class="mt-4 flex space-x-3">
+          <%= link_to "Show this post", post, class: "rounded-lg py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium transition duration-300" %>
+          <%= link_to "Edit this post", edit_post_path(post), class: "rounded-lg py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium transition duration-300" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
